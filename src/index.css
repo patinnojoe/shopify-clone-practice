@@ -1,0 +1,220 @@
+/* 
+  Generall styles across the application
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  scroll-behavior: smooth;
+  /* background-color: var(--body-color); */
+  background-color: #f1fff9;
+
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+:root {
+  /* color */
+  --body-color: #fff;
+  --text-black: #000;
+
+  /* font size */
+  /* FONT SIZES */
+  --font-8: 0.5rem;
+  --font-10: 0.625rem;
+  --font-11: 0.6875rem;
+  --font-12: 0.75rem;
+  --font-13: 0.8125rem;
+  --font-14: 0.875rem;
+  --font-15: 0.9375rem;
+  --font-16: 1rem;
+  --font-17: 1.0625rem;
+  --font-18: 1.125rem;
+  --font-19: 1.1875rem;
+  --font-19: 1.1875rem;
+  --font-20: 1.25rem;
+  --font-21: 1.3125rem;
+  --font-22: 1.375rem;
+  --font-23: 1.4375rem;
+  --font-24: 1.5rem;
+  --font-25: 1.5625rem;
+  --font-26: 1.625rem;
+  --font-27: 1.6875rem;
+  --font-28: 1.75rem;
+  --font-29: 1.8125rem;
+  --font-30: 1.875rem;
+  --font-31: 1.9375rem;
+  --font-32: 2rem;
+  --font-33: 2.0625rem;
+  --font-34: 2.125rem;
+  --font-35: 2.1875rem;
+  --font-36: 2.25rem;
+  --font-37: 2.3125rem;
+  --font-38: 2.375rem;
+  --font-39: 2.4375rem;
+  --font-40: 2.5rem;
+  --font-41: 2.5625rem;
+  --font-42: 2.625rem;
+  --font-43: 2.6875rem;
+  --font-44: 2.75rem;
+  --font-45: 2.8125rem;
+  --font-46: 2.875rem;
+  --font-47: 2.9375rem;
+  --font-48: 3rem;
+  --font-49: 3.0625rem;
+  --font-50: 3.125rem;
+}
+
+.fnt-10 {
+  font-size: var(--font-10);
+}
+
+.fnt-11 {
+  font-size: var(--font-11);
+}
+
+.fnt-12 {
+  font-size: var(--font-12);
+}
+
+.fnt-13 {
+  font-size: var(--font-13);
+}
+
+.fnt-14 {
+  font-size: var(--font-14);
+}
+
+.fnt-15 {
+  font-size: var(--font-15);
+}
+
+.fnt-16 {
+  font-size: var(--font-16);
+}
+
+.fnt-17 {
+  font-size: var(--font-17);
+}
+
+.fnt-18 {
+  font-size: var(--font-18);
+}
+
+.fnt-19 {
+  font-size: var(--font-19);
+}
+
+.fnt-20 {
+  font-size: var(--font-20);
+}
+
+.fnt-21 {
+  font-size: var(--font-21);
+}
+
+.fnt-22 {
+  font-size: var(--font-22);
+}
+
+.fnt-23 {
+  font-size: var(--font-23);
+}
+
+.fnt-24 {
+  font-size: var(--font-24);
+}
+
+.fnt-25 {
+  font-size: var(--font-25);
+}
+
+.fnt-26 {
+  font-size: var(--font-26);
+}
+
+.fnt-27 {
+  font-size: var(--font-27);
+}
+
+.fnt-28 {
+  font-size: var(--font-28);
+}
+
+.fnt-29 {
+  font-size: var(--font-29);
+}
+
+.fnt-30 {
+  font-size: var(--font-30);
+}
+.fnt-31 {
+  font-size: var(--font-31);
+}
+.fnt-32 {
+  font-size: var(--font-32);
+}
+.fnt-33 {
+  font-size: var(--font-33);
+}
+.fnt-34 {
+  font-size: var(--font-34);
+}
+.fnt-35 {
+  font-size: var(--font-35);
+}
+.fnt-40 {
+  font-size: var(--font-40);
+}
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+b,
+mark,
+small,
+strong,
+header,
+a,
+ul,
+nav,
+header,
+li,
+button,
+span {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+input {
+  outline: none;
+  border: none;
+}
+input::placeholder {
+  font-size: 15px;
+  color: #000;
+}
