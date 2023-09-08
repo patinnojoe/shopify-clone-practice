@@ -204,6 +204,7 @@ button,
 span {
   padding: 0;
   margin: 0;
+  margin-bottom: 0;
 }
 
 a {
@@ -217,4 +218,8 @@ input {
 input::placeholder {
   font-size: 15px;
   color: #000;
+}
+.g-5custom {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
 }

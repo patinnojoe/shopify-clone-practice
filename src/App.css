@@ -7,14 +7,19 @@
   background-image: radial-gradient(circle at 0 0, #5fd5b6 0, rgba(95, 213, 182, 0) 30%),
     linear-gradient(180deg, rgba(121, 223, 255, 0.7) -10%, rgba(121, 223, 255, 0) 70%),
     radial-gradient(circle at 95% 0, #d0f224 0, rgba(95, 213, 182, 0) 20%);
+  padding: 1rem 2rem;
+}
+.onboarding-page-wrapper .hero-header-text {
+  font-size: 45px;
 }
 .onboarding-page-wrapper .logo {
   height: 3rem;
 }
 .onboarding-page-wrapper .get-started-img {
-  width: 40vw;
-  display: block;
+  height: auto;
   margin: 0 auto;
+  display: block;
+  width: 80%;
 }
 .onboarding-page-wrapper .start-trail-form {
   border: 2px solid black;
@@ -23,9 +28,25 @@
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem;
+}
+.offer-container .offer-image {
+  width: 70px;
+}
+.onboarding-page-wrapper .front-users-container {
+  border-top: 1px solid rgba(128, 128, 128, 0.185);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.185);
+  padding: 1rem 0;
+  margin: 5rem 0;
 }
 .onboarding-page-wrapper .details-section {
-  background: rgb(241 255 249/1);
-  width: 100vw;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 1024px) {
+  .onboarding-page-wrapper .get-started-img {
+    width: 30%;
+  }
+  .onboarding-page-wrapper .hero-header-text {
+    font-size: 65px;
+  }
 }
