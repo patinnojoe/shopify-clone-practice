@@ -183,6 +183,7 @@ body::-webkit-scrollbar {
   font-size: var(--font-40);
 }
 section,
+aside,
 h1,
 h2,
 h3,
@@ -222,4 +223,10 @@ input::placeholder {
 .g-5custom {
   --bs-gutter-x: 2rem;
   --bs-gutter-y: 2rem;
+}
+.clr-white {
+  color: white;
+}
+.clr-black {
+  color: black;
 }

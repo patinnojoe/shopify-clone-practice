@@ -1,3 +1,4 @@
+/* onboarding styling begins */
 .onboarding-page-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,7 +8,6 @@
   background-image: radial-gradient(circle at 0 0, #5fd5b6 0, rgba(95, 213, 182, 0) 30%),
     linear-gradient(180deg, rgba(121, 223, 255, 0.7) -10%, rgba(121, 223, 255, 0) 70%),
     radial-gradient(circle at 95% 0, #d0f224 0, rgba(95, 213, 182, 0) 20%);
-  padding: 1rem 2rem;
 }
 .onboarding-page-wrapper .hero-header-text {
   font-size: 45px;
@@ -34,19 +34,67 @@
   width: 70px;
 }
 .onboarding-page-wrapper .front-users-container {
-  border-top: 1px solid rgba(128, 128, 128, 0.185);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.185);
+  border-top: 2px solid rgba(128, 128, 128, 0.185);
+  border-bottom: 2px solid rgba(128, 128, 128, 0.185);
   padding: 1rem 0;
-  margin: 5rem 0;
 }
 .onboarding-page-wrapper .details-section {
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }
+
+.front-users-container .front-users-container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.front-users-container .front-page-users-logo {
+  max-width: 150px;
+}
+.onboarding-page-wrapper .subscribe-to-shopify-container {
+  background: #054a49 radial-gradient(circle at -68% 100%, #d0f224aa 24%, #054a49 55%);
+}
+.onboarding-page-wrapper .subscribe-to-shopify-container {
+  padding: 10rem 1rem;
+  position: relative;
+}
+.onboarding-page-wrapper .subscribe-to-shopify-container .subscribe-top-right-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, -50px);
+  width: 150px;
+}
+.onboarding-page-wrapper .subscribe-to-shopify-container .subscribe-bottom-left-img {
+  position: absolute;
+  bottom: 0;
+  width: 140px;
+  left: 50px;
+  transform: translate(-20px, 60px);
+}
+/* on boarding stying ends */
+
+/* media query for desktop */
 @media screen and (min-width: 1024px) {
   .onboarding-page-wrapper .get-started-img {
     width: 30%;
   }
   .onboarding-page-wrapper .hero-header-text {
     font-size: 65px;
+  }
+  .onboarding-page-wrapper .subscribe-text {
+    font-size: 60px;
+  }
+  .front-users-container .front-page-users-logo {
+    max-width: 100%;
+  }
+  .onboarding-page-wrapper .quote-container .ceo-quote {
+    font-size: 50px;
   }
 }

@@ -1,4 +1,6 @@
 import { shopifyLogo } from '../assets';
+import Faq from './FrequentlyAskedQuestion';
+import FrontUsers from './FrontUsers';
 import { AnchorButton, InputField, Offer } from './UI';
 
 const OnboardingScreen = () => {
@@ -18,6 +20,7 @@ const OnboardingScreen = () => {
             </p>
           </div>
           <div className="d-flex flex-column gap-3 flex-md-row justify-content-center">
+            {/* display only on desktop */}
             <section className="start-trail-form d-none d-lg-flex d-md-flex">
               <InputField inputPlaceholder="Enter your email address" inputType="email" width="100%" />
               <div className="d-none d-lg-flex d-md-flex justify-content-end ">
@@ -53,6 +56,7 @@ const OnboardingScreen = () => {
             <br />
             marketing emails&nbsp;from&nbsp;Shopify.
           </p>
+          {/* details */}
           <section className="details-section">
             <img
               src="https://cdn.shopify.com/shopifycloud/brochure/assets/free-trial/market-be57f30bfb32b297a04a00e2cf2f1adbaecfbde7a8816827f1d8f2a219727bea.svg"
@@ -82,90 +86,84 @@ const OnboardingScreen = () => {
             </div>
 
             {/* front page users */}
-            <div className="front-users-container">
-              <div className="row g-5custom">
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/allbirds-en-32a9094fcaa4ba7a127ff52a9a8a051a501bee2dbc853e77b58347239eba2e31.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
+            <FrontUsers />
 
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/gymshark-6dee5a0bce30830832bb264c6abe948259f5fbc3fae496363d65b93285c0def0.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/brooklinen-en-97e99d6b63701f9e8e01fa31088abea5471e0bffbc5399249d88efab78f09ad7.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/leesa-en-2b8ff54cd3589e8f971a15bec9d18d284f341e021f6d3b5342e5df0b99f90aa6.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/kylie-cosmetics-260bf2e2e655124c9331d97c26967ee10d71bd7384265e76013422c1d1386f84.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/b/shopify-brochure2-assets/ea78a94066ce7611983fd5796d4d1a06.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/untuckit-en-ec6d2da1666f7817bd38320be4500cee061c9f2b1868f0bcf141e2cecbf4f876.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/death-wish-coffee-9512e9d17fdeedebb9abfce9ce082598ee47d470fd0f0272ccac128044b7fc70.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/jungalow-en-db026f34f2a0e403d05c12364aa7e8525c04a1bee09adfc20b794c1badec72d7.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-
-                <div className="col-xl-3 col-lg-3 col-6">
-                  <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/cms/logo-soup/en/rebecca-minkoff-3d13302faef2bb4815be8aa24b005dc5969f51f8b46eabf5cc397b526f2b5e8e.svg"
-                    alt=""
-                    className="front-page-users-logo"
-                  />
-                </div>
-              </div>
-            </div>
+            {/* CEOS quote */}
+            <aside className="d-flex flex-column gap-3 justify-content-center align-items-center quote-container">
+              <h4 className="fw-bold fnt-35 text-center ceo-quote">
+                &quot;Shopify is better than any other platform we&apos;ve
+                <br /> played with, and we &apos;ve played with them all.&quot;
+              </h4>
+              <small className="fnt-18">Jonathon Bayme, CEO of Theory11</small>
+            </aside>
           </section>
+
+          {/* call to action section */}
+          <div className="subscribe-to-shopify-container w-100 mt-4">
+            <div className="d-flex flex-column gap-3 justify-content-center align-items-center">
+              <h4 className="fnt-30 clr-white fw-bold text-center subscribe-text">
+                Build your dream business for $1/month
+              </h4>
+              <p className="clr-white fnt-18 text-center">
+                Start your free trial and enjoy 3 months of Shopify for $1/month on select plans.
+              </p>
+              {/* display only on desktop */}
+              <section className=" bg-white start-trail-form d-none d-lg-flex d-md-flex">
+                <InputField
+                  inputPlaceholder="Enter your email address"
+                  inputType="email"
+                  width="100%"
+                  isBgTransparent={true}
+                />
+                <div className="d-none d-lg-flex d-md-flex justify-content-end ">
+                  <AnchorButton
+                    isBlackBg={true}
+                    isWhiteText={true}
+                    hrefLink="#"
+                    anchorText="Start free trial"
+                    width="10rem"
+                  />
+                </div>
+              </section>
+
+              {/* dispaly only on small screen */}
+              <div className="d-flex d-lg-none d-md-none gap-3 align-items-center flex-column">
+                <InputField
+                  inputPlaceholder="Enter your email address"
+                  inputType="email"
+                  width="100%"
+                  isBorderTransparent={false}
+                  isBgTransparent={false}
+                />
+                <AnchorButton
+                  isBlackBg={true}
+                  isWhiteText={true}
+                  hrefLink="#"
+                  anchorText="Start free trial"
+                  width="100%"
+                />
+              </div>
+              <p className="clr-white text-center">
+                Try Shopify free for 3 days, no credit card required. By entering your email, you agree to receive
+                marketing emails from Shopify.
+              </p>
+
+              {/* top right image */}
+              <img
+                src="https://cdn.shopify.com/b/shopify-brochure2-assets/0d56efcd813bc72d0427f8863976c3a1.svgz"
+                alt=""
+                className="subscribe-top-right-img"
+              />
+              {/* bottom left image */}
+              <img
+                src="https://cdn.shopify.com/b/shopify-brochure2-assets/1d5f94e0fb634025423acb965ece0b18.svgz"
+                alt=""
+                className="subscribe-bottom-left-img"
+              />
+            </div>
+          </div>
+
+          <Faq />
         </div>
       </section>
     </>
