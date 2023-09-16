@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+
   background-image: radial-gradient(circle at 0 0, #5fd5b6 0, rgba(95, 213, 182, 0) 30%),
     linear-gradient(180deg, rgba(121, 223, 255, 0.7) -10%, rgba(121, 223, 255, 0) 70%),
     radial-gradient(circle at 95% 0, #d0f224 0, rgba(95, 213, 182, 0) 20%);
@@ -61,7 +62,7 @@
   background: #054a49 radial-gradient(circle at -68% 100%, #d0f224aa 24%, #054a49 55%);
 }
 .onboarding-page-wrapper .subscribe-to-shopify-container {
-  padding: 10rem 1rem;
+  padding: 7rem 1rem;
   position: relative;
 }
 .onboarding-page-wrapper .subscribe-to-shopify-container .subscribe-top-right-img {
@@ -69,16 +70,109 @@
   top: 0;
   right: 0;
   transform: translate(0, -50px);
-  width: 150px;
+  width: 130px;
 }
 .onboarding-page-wrapper .subscribe-to-shopify-container .subscribe-bottom-left-img {
   position: absolute;
   bottom: 0;
-  width: 140px;
-  left: 50px;
+  width: 120px;
+  left: 20px;
   transform: translate(-20px, 60px);
 }
 /* on boarding stying ends */
+
+/* frequetly asked question styling starts */
+
+.frequently-asked-question-wrapper {
+  padding: 4rem 1rem;
+}
+.frequently-asked-question-wrapper .faq-container:not(:last-child) {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.459);
+}
+
+.frequently-asked-question-wrapper .faq-container {
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+}
+
+.frequently-asked-question-wrapper .faq-question {
+  font-size: 20px;
+}
+.frequently-asked-question-wrapper .accordion-content {
+  max-height: 0;
+  transition: max-height 0.2s;
+  overflow: hidden;
+}
+.frequently-asked-question-wrapper .accordion-content.show {
+  max-height: 500px;
+}
+.frequently-asked-question-wrapper .accordion-header:hover {
+  opacity: 0.85;
+}
+
+.frequently-asked-question-wrapper .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.frequently-asked-question-wrapper .faq-header {
+  font-size: 35px;
+}
+/* frequently askked question styling ends */
+
+/* announcement styling starts */
+.announcement-wrapper {
+  background-color: #e5fbba;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.announcement-wrapper .anchor-tag {
+  text-decoration: underline;
+  color: black;
+  transition: 0.2s;
+}
+.announcement-wrapper .anchor-tag:hover {
+  text-decoration: none;
+}
+.announcement-wrapper .animated-anchor-tag .anchor-tag {
+  color: black;
+  font-weight: bold;
+}
+.announcement-wrapper .animated-anchor-tag .animated-icon {
+  color: black;
+
+  height: 15px;
+  width: 15px;
+  transform: translateX(0);
+  transition: 0.3s;
+  opacity: 0;
+}
+.announcement-wrapper .animated-anchor-tag:hover .animated-icon {
+  transform: translateX(10px);
+  opacity: 1;
+}
+.announcement-wrapper .cancel-announcement {
+  width: 20px;
+  height: 25px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+.announcement-wrapper .cancel-announcement:hover {
+  opacity: 0.7;
+}
+.announcement-wrapper.fixed-at-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.announcement-wrapper .announcement-text {
+  font-size: 14px;
+}
+/* announcement styling ends */
 
 /* media query for desktop */
 @media screen and (min-width: 1024px) {
@@ -96,5 +190,29 @@
   }
   .onboarding-page-wrapper .quote-container .ceo-quote {
     font-size: 50px;
+  }
+  .frequently-asked-question-wrapper .faq-container {
+    padding: 3rem;
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .frequently-asked-question-wrapper .faq-question {
+    font-size: 30px;
+  }
+  .frequently-asked-question-wrapper .faq-header {
+    font-size: 50px;
+  }
+
+  .onboarding-page-wrapper .subscribe-to-shopify-container .subscribe-bottom-left-img {
+    width: 150px;
+    left: 50px;
+  }
+  .frequently-asked-question-wrapper {
+    padding: 4rem;
+  }
+  .onboarding-page-wrapper .subscribe-to-shopify-container .subscribe-top-right-img {
+    width: 150px;
   }
 }

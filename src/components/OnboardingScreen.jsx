@@ -1,11 +1,17 @@
 import { shopifyLogo } from '../assets';
+import AppAnnouncement from './AppAnnouncement';
 import Faq from './FrequentlyAskedQuestion';
 import FrontUsers from './FrontUsers';
 import { AnchorButton, InputField, Offer } from './UI';
-
 const OnboardingScreen = () => {
   return (
     <>
+      <AppAnnouncement
+        announcementText="Join Shopify for $1/month for 3 months and get $50 USD to use in the Shopify App Store."
+        hrefLink="#"
+        anchorText="Terms apply"
+      />
+
       <section className="onboarding-page-wrapper">
         <img src={shopifyLogo} alt="" className="logo" />
         <div className="hero-text d-flex flex-column gap-4">
@@ -25,8 +31,8 @@ const OnboardingScreen = () => {
               <InputField inputPlaceholder="Enter your email address" inputType="email" width="100%" />
               <div className="d-none d-lg-flex d-md-flex justify-content-end ">
                 <AnchorButton
-                  isBlackBg="true"
-                  isWhiteText="true"
+                  isBlackBg={true}
+                  isWhiteText={true}
                   hrefLink="#"
                   anchorText="Start free trial"
                   width="10rem"

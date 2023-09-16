@@ -19,8 +19,7 @@ html {
 body {
   scroll-behavior: smooth;
   /* background-color: var(--body-color); */
-  background-color: #f1fff9;
-
+  background: #f1fff9 !important;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -182,6 +181,9 @@ body::-webkit-scrollbar {
 .fnt-40 {
   font-size: var(--font-40);
 }
+.fnt-50 {
+  font-size: var(--font-50);
+}
 section,
 aside,
 h1,
@@ -207,7 +209,11 @@ span {
   margin: 0;
   margin-bottom: 0;
 }
-
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
 a {
   text-decoration: none;
   color: #000;
@@ -229,4 +235,7 @@ input::placeholder {
 }
 .clr-black {
   color: black;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
