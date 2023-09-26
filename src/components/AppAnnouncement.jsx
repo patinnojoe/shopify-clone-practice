@@ -5,15 +5,22 @@ import { AnchorButton, ArrowAnnimatedLink } from './UI';
 import { FaXmark } from 'react-icons/fa6';
 
 const AppAnnouncement = (props) => {
+  // check if component is fixed
   const [isFixed, setIsFixed] = useState(false);
 
+  // check if component is visible
+  const [isHidden, setHidden] = useState(false);
+
+  const handleCancelClick = () => {
+    setHidden(true);
+  };
+
+  // use effect for annoncement
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY > 100) {
-        // Adjust this value as needed
         setIsFixed(true);
-        console.log('fix now');
       } else {
         setIsFixed(false);
       }
@@ -26,10 +33,14 @@ const AppAnnouncement = (props) => {
     };
   }, []);
 
+  if (isHidden) {
+    return null;
+  }
+
   return (
     <>
       {isFixed ? (
-        <div className="announcement-wrapper fixed-at-top bg-white">
+        <div className={isHidden ? 'hidden' : 'show announcement-wrapper fixed-at-top bg-white'}>
           <div className="d-flex flex-column gap-2 align-items-center justify-content-center gap-md-5 flex-md-row m-auto">
             <span className="fw-bold">Start your free-trial today</span>
             <div className="d-flex align-items-center gap-2 md-gap-3">
@@ -59,10 +70,10 @@ const AppAnnouncement = (props) => {
             </div>
           </div>
 
-          <FaXmark className="cancel-announcement" />
+          <FaXmark className="cancel-announcement" onClick={handleCancelClick} />
         </div>
       ) : (
-        <div className="announcement-wrapper">
+        <div className={isHidden ? 'hidden' : 'announcement-wrapper show'}>
           <div className=" d-flex gap-2 align-items-center justify-content-center m-auto">
             <span className="d-flex gap-2 align-items-center flex-wrap announcement-text">
               {props.announcementText}
@@ -76,7 +87,7 @@ const AppAnnouncement = (props) => {
             </span>
           </div>
 
-          <FaXmark className="cancel-announcement" />
+          <FaXmark className="cancel-announcement" onClick={handleCancelClick} />
         </div>
       )}
     </>

@@ -4,7 +4,7 @@ const InputField = ({ inputType, inputPlaceholder, isBgTransparent, width, isBor
   // set conditional styling
   const inputFieldStyle = {
     backgroundColor: isBgTransparent ? 'transparent' : '#fff',
-    border: isBorderTransparent ? 'none' : '1px solid #000',
+    border: isBorderTransparent ? 'none' : '2px solid #000',
     padding: '1rem',
     borderRadius: '30px',
     width: width,

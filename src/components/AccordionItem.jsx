@@ -18,6 +18,9 @@ function AccordionItem({ question, answer, index }) {
     color: selected === index ? 'white' : 'black',
     fontSize: '16px',
     transition: '0.5s',
+    position: 'absolute',
+    top: '0',
+    right: '0',
   };
   // state to check if accordion is clicked
   const toggleAccordion = (index) => {

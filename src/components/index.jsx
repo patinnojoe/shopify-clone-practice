@@ -6,6 +6,7 @@ import FrontUsers from './FrontUsers';
 import FrequentlyAskedQuestion from './FrequentlyAskedQuestion';
 import AccordionItem from './AccordionItem';
 import AppAnnouncement from './AppAnnouncement';
+import Footer from './Footer';
 
 export {
   Login,
@@ -16,4 +17,5 @@ export {
   FrequentlyAskedQuestion,
   AccordionItem,
   AppAnnouncement,
+  Footer,
 };
