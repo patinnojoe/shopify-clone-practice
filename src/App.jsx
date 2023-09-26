@@ -1,12 +1,15 @@
 import './App.css';
+import { AnnimatedRoutes } from './components/UI';
 import './index.css';
-import { OnboardingScreen } from './components';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <OnboardingScreen />
-    </>
+    <Router>
+      <div className="App">
+        <AnnimatedRoutes />
+      </div>
+    </Router>
   );
 }
 

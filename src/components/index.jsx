@@ -7,6 +7,8 @@ import FrequentlyAskedQuestion from './FrequentlyAskedQuestion';
 import AccordionItem from './AccordionItem';
 import AppAnnouncement from './AppAnnouncement';
 import Footer from './Footer';
+import Form from './Form';
+import SignUp from './SignUp';
 
 export {
   Login,
@@ -18,4 +20,6 @@ export {
   AccordionItem,
   AppAnnouncement,
   Footer,
+  Form,
+  SignUp,
 };

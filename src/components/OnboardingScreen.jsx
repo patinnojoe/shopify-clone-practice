@@ -4,9 +4,10 @@ import Footer from './Footer';
 import Faq from './FrequentlyAskedQuestion';
 import FrontUsers from './FrontUsers';
 import { AnchorButton, InputField, Offer } from './UI';
+import { motion } from 'framer-motion';
 const OnboardingScreen = () => {
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.1 } }}>
       <AppAnnouncement
         announcementText="Join Shopify for $1/month for 3 months and get $50 USD to use in the Shopify App Store."
         hrefLink="#"
@@ -255,7 +256,7 @@ const OnboardingScreen = () => {
 
         <Footer />
       </section>
-    </>
+    </motion.div>
   );
 };
 

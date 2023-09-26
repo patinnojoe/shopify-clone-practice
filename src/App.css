@@ -191,6 +191,26 @@
 } */
 /* announcement styling ends */
 
+/* general styling for ui form */
+
+.ui-form-container .ui-form {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  width: 50%;
+}
+.ui-form-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh;
+}
+.custom-link {
+  text-decoration: none;
+  color: #000;
+}
+/* ui form styling ends */
+
 /* media query for desktop */
 @media screen and (min-width: 1024px) {
   .onboarding-page-wrapper .get-started-img {
