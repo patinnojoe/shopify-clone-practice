@@ -4,5 +4,6 @@ import Offer from './Offers';
 import ArrowAnnimatedLink from './ArrowAnnimatedLink';
 import AnnimatedRoutes from './AnnimatedRoutes';
 import RadioInput from './InputRadio';
+import RadioGroup from './InputRadio';
 
-export { AnchorButton, InputField, Offer, ArrowAnnimatedLink, AnnimatedRoutes, RadioInput };
+export { AnchorButton, InputField, Offer, ArrowAnnimatedLink, AnnimatedRoutes, RadioInput, RadioGroup };
