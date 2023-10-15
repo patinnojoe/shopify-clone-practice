@@ -9,6 +9,8 @@ import AppAnnouncement from './AppAnnouncement';
 import Footer from './Footer';
 import Form from './Form';
 import SignUp from './SignUp';
+import SignUpMethod from './SignUpMethod';
+import AppModal from './AppModalComponent';
 
 export {
   Login,
@@ -22,4 +24,6 @@ export {
   Footer,
   Form,
   SignUp,
+  SignUpMethod,
+  AppModal,
 };

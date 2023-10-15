@@ -227,8 +227,12 @@ input::placeholder {
   color: #000;
 }
 .g-5custom {
-  --bs-gutter-x: 2rem;
-  --bs-gutter-y: 2rem;
+  --bs-gutter-x: 2rem !important;
+  --bs-gutter-y: 2rem !important;
+}
+.g-3custom {
+  --bs-gutter-x: 1.5rem !important;
+  --bs-gutter-y: 0.5rem !important;
 }
 .clr-white {
   color: white;
@@ -238,4 +242,20 @@ input::placeholder {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.app-overlay {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.app-modal.transition-modal {
+  opacity: 1 !important;
+  transition: opacity 0.3s !important;
+
+  /* transition: transform 0.3s; */
 }

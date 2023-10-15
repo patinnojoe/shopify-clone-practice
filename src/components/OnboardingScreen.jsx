@@ -6,6 +6,7 @@ import FrontUsers from './FrontUsers';
 import { AnchorButton, InputField, Offer } from './UI';
 import { motion } from 'framer-motion';
 const OnboardingScreen = () => {
+  document.title = 'welcome.shopify.com';
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.1 } }}>
       <AppAnnouncement

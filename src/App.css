@@ -198,16 +198,18 @@ input[type='radio'] {
   display: inline-block;
   position: relative;
   padding-left: 30px;
+  cursor: pointer;
 }
 
 .custom-radio::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid black; /* Border color for the custom radio button */
-  background-color: white; /* Background color for the custom radio button */
-  border-radius: 50%; /* Make it a circle */
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
   position: absolute;
   left: 0;
   top: 50%;
@@ -215,21 +217,97 @@ input[type='radio'] {
 }
 
 /* Style the custom radio button when checked */
-input[type='radio']:checked + .custom-radio::before {
-  background-color: black; /* Change background color when checked */
-}
 
+.progressbar-container .progress,
+.progress-stacked {
+  --bs-progress-height: 0.5rem !important;
+  --bs-progress-bg: #bfc2c340 !important;
+}
+.progressbar-container .progress .progress-bar.bg-info {
+  background-color: #303030 !important;
+}
+.custom-radio:has(input:checked)::before {
+  border: 4px solid black;
+}
+.form-footer .form-text {
+  color: #616161;
+  cursor: pointer;
+  font-size: 14px;
+}
+.form-footer .form-next {
+  background: #333232c9;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5625rem;
+  text-decoration: none;
+}
+.form-footer .form-next:hover {
+  opacity: 0.9;
+}
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
 .ui-form-container .ui-form {
   background-color: #fff;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   padding: 1rem;
-  width: 50%;
-}
-.ui-form-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  width: 100vw;
   height: 100vh;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 1px 1px 5px 1px #3e3e3c21;
+  overflow: auto;
+}
+.sign-up-method {
+  width: 100vw;
+  height: 100vh;
+  min-height: 90vh;
+  background-color: #fff;
+  /* border-radius: 6px; */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 1px 1px 5px 1px #3e3e3c21;
+  overflow: auto;
+}
+.ui-form-container .ui-form:has(.countrySelect) {
+  width: 35rem;
+  min-height: 55vh;
+  padding: 1rem 2rem;
+  animation: slideIn 0.6s forwards;
+  transform: translateX(-100%);
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.ui-form-container,
+.sign-up-method-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzA1IiBoZWlnaHQ9IjE4MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBjbGlwLXBhdGg9InVybCgjYSkiPjxwYXRoIGZpbGw9IiM3OURGRkYiIGQ9Ik0wIDBoMzA1djE4MS41NDhIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiPjxwYXRoIGQ9Ik01OS45MDggMzcuOTVjLTI5LjA0Ny0zMS40NjgtNDIuMzYtMTMuMTExLTQ1LjM4NyAwLTkuNjgzIDI0LjIwNy0xOS4zNjUgMjcuODM4IDAgNTcuNDkgMTkuMzY1IDI5LjY1My00LjIzNiA0NC43ODItMjkuMDQ3IDExOS44MjItMjQuODEyIDc1LjA0IDE0OC44NjktMTIuMTAzIDE3Ni4xMDEtMzYuOTE1IDI3LjIzMi0yNC44MTEgMzAuMjU4LTEwNy4xMTMtMzQuNDk0LTc4LjA2NS02NC43NTIgMjkuMDQ3LTMwLjg2My0yMi45OTYtNjcuMTczLTYyLjMzMloiIGZpbGw9IiM1RkQ1QjYiLz48L2c+PGcgZmlsdGVyPSJ1cmwoI2MpIj48cGF0aCBkPSJNMjUzLjA4Ny0xMTMuMzM5YzI5LjA0OC0zMS40NjggNDIuMzYxLTEzLjExMiA0NS4zODcgMCA5LjY4MyAyNC4yMDYgMTkuMzY1IDI3LjgzNyAwIDU3LjQ5LTE5LjM2NSAyOS42NTMgNC4yMzYgNDQuNzgyIDI5LjA0NyAxMTkuODIxIDI0LjgxMiA3NS4wNC0xNDguODY5LTEyLjEwMy0xNzYuMTAxLTM2LjkxNC0yNy4yMzItMjQuODEyLTMwLjI1OC0xMDcuMTEzIDM0LjQ5NC03OC4wNjYgNjQuNzUyIDI5LjA0OCAzMC44NjMtMjIuOTk2IDY3LjE3My02Mi4zMzFaIiBmaWxsPSJ1cmwoI2QpIi8+PC9nPjxnIGZpbHRlcj0idXJsKCNlKSI+PGVsbGlwc2UgY3g9IjI5My4xODIiIGN5PSIxMjkuNTI5IiByeD0iMTMxLjU4IiByeT0iNTAuOTc5IiB0cmFuc2Zvcm09InJvdGF0ZSgtMjUuNjQ0IDI5My4xODIgMTI5LjUyOSkiIGZpbGw9IiNDQUMyRkUiLz48L2c+PC9nPjxkZWZzPjxmaWx0ZXIgaWQ9ImIiIHg9Ii03Ny40NiIgeT0iLTM5Ljk0MSIgd2lkdGg9IjMxNy44MzYiIGhlaWdodD0iMzQ1LjU2IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+PGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz48ZmVCbGVuZCBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0ic2hhcGUiLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIzMC4yNTgiIHJlc3VsdD0iZWZmZWN0MV9mb3JlZ3JvdW5kQmx1cl8yMzg2XzEwMzAzMSIvPjwvZmlsdGVyPjxmaWx0ZXIgaWQ9ImMiIHg9IjQ4LjQxMyIgeT0iLTIxNS40MzciIHdpZHRoPSIzNjYuMjQ5IiBoZWlnaHQ9IjM5My45NzMiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj48ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PSIwIiByZXN1bHQ9IkJhY2tncm91bmRJbWFnZUZpeCIvPjxmZUJsZW5kIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJzaGFwZSIvPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjQyLjM2MSIgcmVzdWx0PSJlZmZlY3QxX2ZvcmVncm91bmRCbHVyXzIzODZfMTAzMDMxIi8+PC9maWx0ZXI+PGZpbHRlciBpZD0iZSIgeD0iNzUuNjgxIiB5PSItNDAuNDc1IiB3aWR0aD0iNDM1LjAwMSIgaGVpZ2h0PSIzNDAuMDA5IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+PGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz48ZmVCbGVuZCBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0ic2hhcGUiLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0OC40MTMiIHJlc3VsdD0iZWZmZWN0MV9mb3JlZ3JvdW5kQmx1cl8yMzg2XzEwMzAzMSIvPjwvZmlsdGVyPjxsaW5lYXJHcmFkaWVudCBpZD0iZCIgeDE9IjE4MiIgeTE9IjQyLjUiIHgyPSIyODMiIHkyPSI3LjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjQ0NGRkYyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQ0NGRkYyIiBzdG9wLW9wYWNpdHk9IjAiLz48L2xpbmVhckdyYWRpZW50PjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgzMDV2MTgxLjU0OEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .custom-link {
   text-decoration: none;
@@ -239,26 +317,139 @@ input[type='radio']:checked + .custom-radio::before {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid rgba(128, 128, 128, 0.205);
+  /* padding: 1rem; */
+  border-radius: 8px;
+  border: 1px solid rgba(46, 46, 46, 0.39);
   transition: 0.3s;
-  flex-grow: 1;
-  width: 100%;
+  /* flex-grow: 1; */
+  /* width: 100%; */
+  cursor: pointer;
+  height: 100%;
 }
 .ui-input-box.radio-input.active {
-  border-color: rgba(0, 0, 0, 0.295);
+  border-color: rgba(0, 0, 0, 0.534);
+  background: #80808012;
+  width: 100%;
+}
+.checkbox-input:has(.ui-input-checkbox:checked) {
+  border-color: rgba(0, 0, 0, 0.534);
+  background: #80808012;
+  width: 100%;
 }
 
-.ui-input-box:hover {
-  background-color: rgba(190, 190, 190, 0.041);
-  border-color: rgba(128, 128, 128, 0.048);
+.ui-input-box:hover,
+.sign-method-shopify:hover {
+  background-color: rgba(204, 200, 200, 0.13);
 }
-.radio-input-container {
+.radio-input-container,
+.checkbox-input-container {
   display: flex;
   align-items: center;
   gap: 1rem;
   justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+.sign-method-shopify {
+  border: 1px solid rgba(46, 46, 46, 0.39);
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+}
+.sign-in-method-text {
+  font-weight: 500;
+  font-size: 16px;
+  color: #212b36;
+}
+.fw-semi-bold {
+  font-weight: 500;
+}
+.policy-link {
+  text-decoration: none;
+}
+.policy-link:hover,
+.signup-footer-link:hover {
+  text-decoration: underline;
+}
+.signup-footer-link {
+  text-decoration: none;
+  color: #303030;
+}
+.login .input-container-wrapper {
+  border: 1px solid rgba(46, 46, 46, 0.39);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem;
+}
+.login .input-container-wrapper .email-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5rem;
+}
+.login .input-container-wrapper .scan-to-login-btn {
+  padding: 0.5rem;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.login .input-container-wrapper .scan-to-login-btn:hover {
+  background-color: rgba(204, 200, 200, 0.13);
+}
+.black-bg-btn.login-with-email-btn {
+  text-align: center;
+  color: white;
+  /* border: 2px solid #2c2b2b52; */
+  border-radius: 8px;
+  transition: 0.3s;
+  background-color: #303030;
+  width: 100%;
+  padding: 0.7rem;
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.24) inset, 1px 0px 0px 0px rgba(255, 255, 255, 0.16) inset,
+    -1px 0px 0px 0px rgba(255, 255, 255, 0.16) inset, 0px -1.5px 0px 0px rgba(255, 255, 255, 0.07) inset,
+    0px 0px 0px 0.5px #303030;
+}
+.black-bg-btn.login-with-email-btn:hover {
+  background: #000;
+  /* box-shadow: unset; */
+}
+.login .external-login-divider {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  background: #8c9196;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) calc(50% - 1px),
+    #8c9196 calc(50%),
+    rgba(0, 0, 0, 0) calc(50% + 1px)
+  );
+}
+.login .external-login-divider__text {
+  background: #fff;
+  color: #8c9196;
+  padding: 0 1.5rem;
+}
+.blue-bg-btn {
+  border: 1px solid #0000ff93;
+  border-radius: 5px;
+  padding: 0.2rem 2rem;
+  font-size: 13px;
+  color: blue;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.blue-bg-btn:hover {
+  background-color: rgba(0, 0, 255, 0.082);
 }
 /* ui form styling ends */
 
@@ -318,5 +509,37 @@ input[type='radio']:checked + .custom-radio::before {
   }
   .quote-container .ceo-quote {
     font-size: 35px;
+  }
+
+  .ui-form-container .ui-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    width: 54rem;
+    height: auto;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 1px 1px 5px 1px #3e3e3c21;
+  }
+  .sign-up-method {
+    width: 35rem;
+    height: auto;
+    min-height: 90vh;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 1px 1px 5px 1px #3e3e3c21;
+  }
+  .ui-form-container .ui-form:has(.countrySelect) {
+    width: 35rem;
+    min-height: 55vh;
+    padding: 1rem 2rem;
+    animation: slideIn 0.6s forwards;
+    transform: translateX(-100%);
   }
 }
