@@ -32,6 +32,7 @@ body::-webkit-scrollbar {
   /* color */
   --body-color: #fff;
   --text-black: #000;
+  --admin-primary-color:#303030
 
   /* font size */
   /* FONT SIZES */
@@ -252,7 +253,9 @@ input::placeholder {
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+li {
+  list-style: none;
+}
 .app-modal.transition-modal {
   opacity: 1 !important;
   transition: opacity 0.3s !important;

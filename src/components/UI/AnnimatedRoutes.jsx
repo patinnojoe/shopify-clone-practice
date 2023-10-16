@@ -7,6 +7,7 @@ import SignUpMethod from '../SignUpMethod';
 import LogIn from '../Login';
 
 import { AnimatePresence } from 'framer-motion';
+import { Home } from '../admin';
 
 function AnnimatedRoutes() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function AnnimatedRoutes() {
         <Route path="/signup" exact Component={SignUp} />
         <Route path="/signup-method" exact Component={SignUpMethod}></Route>
         <Route path="/login" exact Component={LogIn}></Route>
+        <Route path="/admin/" exact Component={Home}></Route>
       </Routes>
     </AnimatePresence>
   );

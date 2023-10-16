@@ -114,7 +114,9 @@ const LogIn = () => {
                   </button>
                 </div>
 
-                <button className="black-bg-btn login-with-email-btn">Continue with email</button>
+                <Link className="black-bg-btn login-with-email-btn" to="/admin/">
+                  Continue with email
+                </Link>
 
                 <div className="external-login-divider">
                   <span className="external-login-divider__text">or</span>
