@@ -5,6 +5,7 @@ import Faq from './FrequentlyAskedQuestion';
 import FrontUsers from './FrontUsers';
 import { AnchorButton, InputField, Offer } from './UI';
 import { motion } from 'framer-motion';
+
 const OnboardingScreen = () => {
   document.title = 'welcome.shopify.com';
   return (

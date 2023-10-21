@@ -106,22 +106,24 @@ const LogIn = () => {
                 <span className="fnt-14">Continue to Shopify.</span>
               </div>
 
-              <section className="mb-2 d-flex flex-column gap-3">
-                <div className="input-container-wrapper">
-                  <input type="email" className="email-input" />
-                  <button className="scan-to-login-btn" onClick={openModal}>
-                    <img src={loginPersonSvg} alt="" height="25px" />
-                  </button>
-                </div>
-
-                <Link className="black-bg-btn login-with-email-btn" to="/admin/">
-                  Continue with email
-                </Link>
+              <div className="d-flex flex-column gap-3 mb-4 ">
+                <section className="d-flex flex-column gap-1">
+                  <label htmlFor="">Email</label>
+                  <div className="input-container-wrapper">
+                    <input type="email" className="email-input" />
+                    <button className="scan-to-login-btn" onClick={openModal}>
+                      <img src={loginPersonSvg} alt="" height="25px" />
+                    </button>
+                  </div>
+                </section>
 
                 <div className="external-login-divider">
                   <span className="external-login-divider__text">or</span>
                 </div>
-              </section>
+                <Link className="black-bg-btn login-with-email-btn" to="/admin/">
+                  Continue with email
+                </Link>
+              </div>
 
               <section className="d-flex flex-column gap-3">
                 <Method>

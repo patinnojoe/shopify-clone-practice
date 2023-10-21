@@ -32,7 +32,9 @@ body::-webkit-scrollbar {
   /* color */
   --body-color: #fff;
   --text-black: #000;
-  --admin-primary-color:#303030
+  --admin-primary-color: #303030;
+  --light-text: #e3e3e3;
+  --primary-dark: #1a1a1a;
 
   /* font size */
   /* FONT SIZES */
@@ -261,4 +263,7 @@ li {
   transition: opacity 0.3s !important;
 
   /* transition: transform 0.3s; */
+}
+.clr-black {
+  color: #000;
 }
