@@ -2,6 +2,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { AppHeader, AppSidebar } from './UI';
 import { ProgressBar } from 'react-bootstrap';
 import { FaXmark } from 'react-icons/fa6';
+import PropTypes from 'prop-types';
 
 import { guideItems } from './constants';
 import { useState } from 'react';
@@ -116,3 +117,15 @@ export function GuideItem(props) {
     </div>
   );
 }
+// prop validation
+
+GuideItem.propTypes = {
+  onToggle: PropTypes.func,
+  headerTitle: PropTypes.string,
+  isOpen: PropTypes.bool,
+  headerText: PropTypes.string,
+  subText: PropTypes.node,
+  actionBtn: PropTypes.node,
+  itemImage: PropTypes.string,
+  subOptions: PropTypes.node,
+};

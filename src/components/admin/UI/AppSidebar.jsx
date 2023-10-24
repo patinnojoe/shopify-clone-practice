@@ -1,13 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { pointOfSaleIcon, storeIcon } from '../../../assets';
+import { FiCornerDownRight } from 'react-icons/fi';
 
 const AppSidebar = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/admin/';
+  const isOrdersPage = location.pathname === '/admin/orders';
+
   return (
     <aside className="app-sidebar">
-      <ul className="d-flex gap-1 flex-column">
+      <ul className="d-flex gap-1 flex-column w-100">
         <section className="flex-grow-1 d-flex flex-column">
           <li>
-            <Link className="sidebar-link active">
+            <Link className={isHomePage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"
@@ -26,7 +31,7 @@ const AppSidebar = () => {
           </li>
 
           <li>
-            <Link className="sidebar-link">
+            <Link className={isOrdersPage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/orders">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"
@@ -45,6 +50,18 @@ const AppSidebar = () => {
 
               <span className="sidebar-text">Orders</span>
             </Link>
+            <div className={isOrdersPage ? 'd-block' : 'd-none'}>
+              <ul className="sidebar-sub-links-container">
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Drafts</Link>
+                </li>
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Abandoned Checkouts</Link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li>
