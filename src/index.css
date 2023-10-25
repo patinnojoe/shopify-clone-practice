@@ -82,7 +82,18 @@ body::-webkit-scrollbar {
   --font-49: 3.0625rem;
   --font-50: 3.125rem;
 }
-
+.b-radius8 {
+  border-radius: var(--font-8);
+}
+.b-radius10 {
+  border-radius: var(--font-10);
+}
+.b-radius15 {
+  border-radius: var(--font-15);
+}
+.b-radius20 {
+  border-radius: var(--font-20);
+}
 .fnt-10 {
   font-size: var(--font-10);
 }

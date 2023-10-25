@@ -6,10 +6,15 @@ const AppSidebar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/admin/';
   const isOrdersPage = location.pathname === '/admin/orders';
+  const isDiscountPage = location.pathname === '/admin/discounts';
+  const isProductPage = location.pathname === '/admin/products';
+  const isCustomersPage = location.pathname === '/admin/customers';
+  const isContentPage = location.pathname === '/admin/content';
+  const isAnalyticsPage = location.pathname === '/admin/analytics';
 
   return (
     <aside className="app-sidebar">
-      <ul className="d-flex gap-1 flex-column w-100">
+      <ul className="d-flex gap-1 flex-column w-100 p-0">
         <section className="flex-grow-1 d-flex flex-column">
           <li>
             <Link className={isHomePage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/">
@@ -65,7 +70,7 @@ const AppSidebar = () => {
           </li>
 
           <li>
-            <Link className="sidebar-link">
+            <Link className={isProductPage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/products">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"
@@ -84,10 +89,37 @@ const AppSidebar = () => {
 
               <span className="sidebar-text">Products</span>
             </Link>
+
+            <div className={isProductPage ? 'd-block' : 'd-none'}>
+              <ul className="sidebar-sub-links-container">
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Collections</Link>
+                </li>
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Inventory</Link>
+                </li>
+
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Purchase orders</Link>
+                </li>
+
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Transfers</Link>
+                </li>
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Gift cards</Link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li>
-            <Link className="sidebar-link">
+            <Link className={isCustomersPage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/customers">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"
@@ -104,10 +136,19 @@ const AppSidebar = () => {
 
               <span className="sidebar-text">Customers</span>
             </Link>
+
+            <div className={isCustomersPage ? 'd-block' : 'd-none'}>
+              <ul className="sidebar-sub-links-container">
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Segements</Link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li>
-            <Link className="sidebar-link">
+            <Link className={isContentPage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/content">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"
@@ -129,10 +170,23 @@ const AppSidebar = () => {
 
               <span className="sidebar-text">Content</span>
             </Link>
+            <div className={isContentPage ? 'd-block' : 'd-none'}>
+              <ul className="sidebar-sub-links-container">
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Metaobjects</Link>
+                </li>
+
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Files</Link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li>
-            <Link className="sidebar-link">
+            <Link className={isAnalyticsPage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/analytics">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"
@@ -150,6 +204,20 @@ const AppSidebar = () => {
 
               <span className="sidebar-text">Analytics</span>
             </Link>
+
+            <div className={isAnalyticsPage ? 'd-block' : 'd-none'}>
+              <ul className="sidebar-sub-links-container">
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Reports</Link>
+                </li>
+
+                <li className="sub-link-item">
+                  <FiCornerDownRight className="sub-link-svg" width="15px" color="#5254567d" />
+                  <Link className="sub-link">Live views</Link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li>
@@ -174,7 +242,7 @@ const AppSidebar = () => {
           </li>
 
           <li>
-            <Link className="sidebar-link">
+            <Link className={isDiscountPage ? 'sidebar-link active' : 'sidebar-link'} to="/admin/discounts">
               <span className="sidebar-icon">
                 <svg
                   viewBox="0 0 20 20"

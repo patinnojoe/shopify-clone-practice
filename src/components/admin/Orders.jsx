@@ -11,7 +11,7 @@ const Orders = () => {
         <main className="page-inner">
           <section className="d-flex flex-column gap-4">
             <h5 className="fw-bold">Orders</h5>
-            <div className="page-white-container">
+            <div className="page-white-container shadow-sm">
               <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/0ecc04f85cc74cb4.svg" alt="" />
               <div className=" d-flex flex-column gap-2 justify-content-center align-items-center mb-5">
                 <p className="fw-bold fnt-13 text-center">Your orders will show here</p>
