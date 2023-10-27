@@ -126,17 +126,17 @@ const LogIn = () => {
               </div>
 
               <section className="d-flex flex-column gap-3">
-                <Method>
+                <Method link="/signup-method">
                   <img src={AppleSVg} alt="" height="20px" />
                   <span className="sign-in-method-text">Sign up with Apple</span>
                 </Method>
 
-                <Method>
+                <Method link="/signup-method">
                   <img src={FacebookSvg} alt="" height="20px" />
                   <span className="sign-in-method-text">Sign up with Facebook</span>
                 </Method>
 
-                <Method>
+                <Method link="/signup-method">
                   <img src={GoogleSvg} alt="" height="20px" />
                   <span className="sign-in-method-text">Sign up with Google</span>
                 </Method>
@@ -172,9 +172,14 @@ const LogIn = () => {
 export default LogIn;
 
 export function Method(props) {
-  return <div className="sign-method-shopify">{props.children}</div>;
+  return (
+    <Link to={props.link} className="sign-method-shopify text-decoration-none">
+      {props.children}
+    </Link>
+  );
 }
 
 Method.propTypes = {
   children: PropTypes.node,
+  link: PropTypes.string,
 };

@@ -1,12 +1,18 @@
+import { Link } from 'react-router-dom';
 import { whiteShopifyLogo, whiteShopifyTextLogo } from '../../../assets';
+import { FaBars } from 'react-icons/fa6';
+import PropTypes from 'prop-types';
 
-const AppHeader = () => {
+const AppHeader = (props) => {
   return (
     <header className="shopify-admin-header">
-      <div className="d-flex align-items-baseline">
-        <img src={whiteShopifyLogo} alt="shopify" height="25px" className="icon" />
-        <img src={whiteShopifyTextLogo} alt="shopify" height="20px" className="text" />
-      </div>
+      <Link className="d-flex align-items-baseline d-none d-lg-block" to="/admin/">
+        <img src={whiteShopifyLogo} alt="shopify" height="25px" className="icon sm-d-none" />
+        <img src={whiteShopifyTextLogo} alt="shopify" height="20px" className="text sm-d-none" />
+      </Link>
+      <button onClick={props.toggleSidebar} className="d-block d-lg-none">
+        <FaBars color="#ffffff94" />
+      </button>
 
       <button className="header-search">
         <span className="d-flex align-items-center gap-1">
@@ -33,7 +39,7 @@ const AppHeader = () => {
 
       <div className="d-flex justify-content-end align-items-center gap-2">
         {/* notification dropdown btn */}
-        <button className="header-button">
+        <button className="header-button bell">
           <svg
             viewBox="0 0 20 20"
             className="Polaris-Icon__Svg_375hu"
@@ -51,12 +57,17 @@ const AppHeader = () => {
         </button>
 
         <button className="header-button ms-btn">
-          <span>My Store</span>
+          <span className="d-none d-lg-block"> My Store</span>
           <span className="ms">MS</span>
         </button>
       </div>
     </header>
   );
+};
+
+// prop validation
+AppHeader.propTypes = {
+  toggleSidebar: PropTypes.func,
 };
 
 export default AppHeader;

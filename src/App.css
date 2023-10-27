@@ -463,6 +463,7 @@ input[type='radio'] {
   padding: var(--font-15);
   height: 60px;
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1.2fr 1fr;
   position: fixed;
   top: 0;
@@ -732,6 +733,7 @@ input[type='radio'] {
   margin-top: calc(65px + var(--font-15));
   margin-left: 250px;
   width: 100%;
+  height: 100%;
   z-index: 1;
   padding-left: 1rem;
 }
@@ -757,9 +759,18 @@ input[type='radio'] {
   padding: 1rem 1rem 2rem;
   margin-right: 2rem;
 }
-.discount-header {
-  margin-right: 2rem;
+.analytics-header {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.discount-header {
+  /* padding: 0 2rem; */
+  /* margin-top: 2rem; */
+  display: flex;
+  width: 100%;
+  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: space-between;
 }
@@ -898,6 +909,7 @@ input[type='radio'] {
   padding: 1rem;
   border-radius: 0.5rem;
   height: 100%;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -920,12 +932,133 @@ input[type='radio'] {
   align-items: center;
   justify-content: center;
 }
+.notification-tab .select-plan-container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
 /* home page end ends */
+
+/* media query for mobile */
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 4; /* Place it above the content and behind the sidebar */
+  }
+  .app-sidebar {
+    transform: translateX(-250px);
+    z-index: 5;
+    padding-top: 10px;
+    transition: 0.3s;
+  }
+  .sidebar-open .app-sidebar {
+    transform: translateX(0) !important;
+    transition: 0.3s;
+  }
+  .shopify-admin-header {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+  .header-button.bell {
+    background-color: transparent;
+  }
+  .shopify-admin-header .header-button {
+    padding: 0;
+  }
+  .customize-analytics-btn {
+    display: none;
+  }
+  .analytics-header {
+    margin-right: unset;
+    gap: unset;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .page-inner .notification-tab {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .notification-tab .select-plan-container {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0.5rem;
+  }
+
+  .page-wrapper .page-inner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .page-white-container {
+    width: 100%;
+    height: 100%;
+
+    margin-right: unset;
+    /* display: unset; */
+  }
+  .content-wrapper {
+    padding: 5rem 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+  }
+  .page-white-container .sub-text {
+    font-size: 13px;
+
+    text-align: center;
+  }
+  .app-tutorial-guide {
+    width: 100%;
+  }
+  .guide-item-container .itemImage {
+    display: none;
+  }
+  .discount-header {
+    padding: 0;
+  }
+  .normal-tool-tip-btn:hover .normal-tool-tip-content {
+    max-width: 250px;
+  }
+  .products-skeleton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 0 2rem;
+    border-radius: 0;
+  }
+  .skeleton-container {
+    border-radius: unset;
+  }
+}
+
+/* mobile media query */
 
 /* media query for desktop */
 @media screen and (min-width: 1024px) {
   .onboarding-page-wrapper .get-started-img {
     width: 30%;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: auto;
+    height: 100vh;
+  }
+  .page-white-container .sub-text {
+    font-size: 13px;
+    width: 50%;
+    text-align: center;
   }
   .onboarding-page-wrapper .hero-header-text {
     font-size: 65px;

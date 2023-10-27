@@ -1,5 +1,5 @@
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { AppHeader, AppSidebar } from './UI';
+import { Dashboard } from './UI';
 import { ProgressBar } from 'react-bootstrap';
 import { FaXmark } from 'react-icons/fa6';
 import PropTypes from 'prop-types';
@@ -23,64 +23,58 @@ const Home = () => {
   };
 
   return (
-    <section>
-      <AppHeader />
-      <div className="page-wrapper">
-        <AppSidebar />
-        <main className="page-inner">
-          <div className="d-flex flex-column gap-3">
-            {/* Trial banner */}
-            <div className="d-flex justify-content-center align-items-center">
-              <div className="notification-tab">
-                <span>Extend your trial for $1/month for 3 months on select plans.</span>
-                <span className="d-flex gap-2 align-items-center">
-                  <button className="trial-btn">Select a plan</button>
-                  <FaXmark color="#fff" fontSize="12px" className="cursor-pointer" />
-                </span>
-              </div>
+    <Dashboard>
+      <div className="content-wrapper">
+        {/* Trial banner */}
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="notification-tab">
+            <span>Extend your trial for $1/month for 3 months on select plans.</span>
+            <span className="select-plan-container">
+              <button className="trial-btn">Select a plan</button>
+              <FaXmark color="#fff" fontSize="12px" className="cursor-pointer" />
+            </span>
+          </div>
+        </div>
+
+        {/* App setup tutorial */}
+        <section className="app-tutorial-guide">
+          <header className="d-flex flex-column gap-2 p-3">
+            <div className="d-flex justify-content-between">
+              <span className="fw-bold">Setup guide</span>
+              <span className="caret-span">
+                <FaChevronUp color="#09090961" size={13} className="caret" />
+              </span>
+              <span className="caret-span d-none">
+                <FaChevronDown color="#09090961" size={13} className="caret " />
+              </span>
             </div>
+            <p className="fnt-13">Use this personalized guide to get your store up and running.</p>
+            <div className="d-flex align-items-center gap-2">
+              <span>0 of 9 tasks completed</span>
+              <ProgressBar variant="info" now="20%" />
+            </div>
+          </header>
 
-            {/* App setup tutorial */}
-            <section className="app-tutorial-guide">
-              <header className="d-flex flex-column gap-2 p-3">
-                <div className="d-flex justify-content-between">
-                  <span className="fw-bold">Setup guide</span>
-                  <span className="caret-span">
-                    <FaChevronUp color="#09090961" size={13} className="caret" />
-                  </span>
-                  <span className="caret-span d-none">
-                    <FaChevronDown color="#09090961" size={13} className="caret " />
-                  </span>
-                </div>
-                <p className="fnt-13">Use this personalized guide to get your store up and running.</p>
-                <div className="d-flex align-items-center gap-2">
-                  <span>0 of 9 tasks completed</span>
-                  <ProgressBar variant="info" now="20%" />
-                </div>
-              </header>
-
-              <div className="app-tutorial-guide-content">
-                <section className="online-store-section">
-                  {guideItems.map((item, index) => (
-                    <GuideItem
-                      key={index}
-                      headerText={item.headerText}
-                      subText={item.subText}
-                      actionBtn={item.actionBtn}
-                      itemImage={item.itemImage}
-                      headerTitle={item.headerTitle}
-                      isOpen={index === openedItemIndex}
-                      subOptions={item.subOptions}
-                      onToggle={() => toggleGuide(index)}
-                    />
-                  ))}
-                </section>
-              </div>
+          <div className="app-tutorial-guide-content">
+            <section className="online-store-section">
+              {guideItems.map((item, index) => (
+                <GuideItem
+                  key={index}
+                  headerText={item.headerText}
+                  subText={item.subText}
+                  actionBtn={item.actionBtn}
+                  itemImage={item.itemImage}
+                  headerTitle={item.headerTitle}
+                  isOpen={index === openedItemIndex}
+                  subOptions={item.subOptions}
+                  onToggle={() => toggleGuide(index)}
+                />
+              ))}
             </section>
           </div>
-        </main>
+        </section>
       </div>
-    </section>
+    </Dashboard>
   );
 };
 

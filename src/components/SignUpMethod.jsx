@@ -69,7 +69,7 @@ const SignUpMethod = () => {
             </div>
 
             <section className="d-flex flex-column gap-3">
-              <Method>
+              <Method link="/login">
                 <img
                   src="https://cdn.shopify.com/shopifycloud/identity/assets/svg/EmailMajor-3071e53665a72fd876908e501d383653820e872a1f9bf07a40e9918491b02879.svg"
                   alt=""
@@ -78,27 +78,27 @@ const SignUpMethod = () => {
                 <span className="sign-in-method-text">Sign up with email</span>
               </Method>
 
-              <Method>
+              <Method link="/login">
                 <img src={AppleSVg} alt="" height="20px" />
                 <span className="sign-in-method-text">Sign up with Apple</span>
               </Method>
 
-              <Method>
+              <Method link="/login">
                 <img src={FacebookSvg} alt="" height="20px" />
                 <span className="sign-in-method-text">Sign up with Facebook</span>
               </Method>
 
-              <Method>
+              <Method link="/login">
                 <img src={GoogleSvg} alt="" height="20px" />
                 <span className="sign-in-method-text">Sign up with Google</span>
               </Method>
               <span className="fnt-14">
                 By proceeding, you agree to the &nbsp;
-                <Link to="#" className="policy-link">
+                <Link to="/login" className="policy-link">
                   Terms and Conditions
                 </Link>{' '}
                 &nbsp; and &nbsp;
-                <Link to="#" className="policy-link">
+                <Link to="/login" className="policy-link">
                   Privacy Policy
                 </Link>
               </span>
@@ -133,9 +133,14 @@ const SignUpMethod = () => {
 export default SignUpMethod;
 
 export function Method(props) {
-  return <div className="sign-method-shopify">{props.children}</div>;
+  return (
+    <Link to={props.link} className="sign-method-shopify text-decoration-none">
+      {props.children}
+    </Link>
+  );
 }
 
 Method.propTypes = {
   children: PropTypes.node,
+  link: PropTypes.string,
 };

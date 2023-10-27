@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const AnchorButton = ({
   hrefLink,
@@ -29,9 +30,9 @@ const AnchorButton = ({
   };
 
   return (
-    <a href={hrefLink} style={anchorBtnStyle}>
+    <Link to={hrefLink} style={anchorBtnStyle}>
       {anchorText}
-    </a>
+    </Link>
   );
 };
 

@@ -286,7 +286,7 @@ const AppSidebar = () => {
                 <div className="d-flex w-100 justify-content-between">
                   <span className="sidebar-text">Online Store</span>
                   {/* TODO:fix tool tip */}
-                  <span className="view-store-svg tool-tip-btn">
+                  {/* <span className="view-store-svg tool-tip-btn">
                     <svg
                       viewBox="0 0 20 20"
                       className="Polaris-Icon__Svg_375hu"
@@ -306,7 +306,7 @@ const AppSidebar = () => {
                     </svg>
 
                     <span className="tool-tip">hello this is my tooltip</span>
-                  </span>
+                  </span> */}
                 </div>
               </Link>
             </li>

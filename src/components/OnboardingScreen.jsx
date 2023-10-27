@@ -116,7 +116,7 @@ const OnboardingScreen = () => {
                 <AnchorButton
                   isBlackBg={true}
                   isWhiteText={true}
-                  hrefLink="#"
+                  hrefLink="/signup"
                   anchorText="Start free trial"
                   width="10rem"
                 />
@@ -134,7 +134,7 @@ const OnboardingScreen = () => {
               <AnchorButton
                 isBlackBg={true}
                 isWhiteText={true}
-                hrefLink="#"
+                hrefLink="/signup"
                 anchorText="Start free trial"
                 width="100%"
               />
@@ -210,7 +210,7 @@ const OnboardingScreen = () => {
                 <AnchorButton
                   isBlackBg={true}
                   isWhiteText={true}
-                  hrefLink="#"
+                  hrefLink="/signup"
                   anchorText="Start free trial"
                   width="10rem"
                 />
@@ -226,10 +226,11 @@ const OnboardingScreen = () => {
                 isBorderTransparent={false}
                 isBgTransparent={false}
               />
+
               <AnchorButton
                 isBlackBg={true}
                 isWhiteText={true}
-                hrefLink="#"
+                hrefLink="/signup"
                 anchorText="Start free trial"
                 width="100%"
               />
