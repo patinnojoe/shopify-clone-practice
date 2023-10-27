@@ -31,7 +31,7 @@ const Content = () => {
                 unique information like cart upsells, size guides, or product highlights.
               </p>
 
-              <p className="fnt-13 text-center m-auto w-50">
+              <p className="fnt-13 text-center m-auto sub-text">
                 To add a single field, <Link>visit metafields.</Link>
               </p>
 
