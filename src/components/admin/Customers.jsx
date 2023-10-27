@@ -27,7 +27,7 @@ const Customers = () => {
             <div className=" d-flex flex-column gap-2 justify-content-center align-items-center mb-5">
               <p className="fw-bold fnt-13 text-center">Everything customers-related in one place</p>
               <p className="sub-text">
-                Manage customer details, see customer order history, and group <br /> customers into segments.
+                Manage customer details, see customer order history, and group customers into segments.
               </p>
 
               <div className="d-flex align-items-center gap-2 mt-3">
