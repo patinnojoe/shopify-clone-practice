@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Dashboard } from './UI';
 import { useState, useEffect } from 'react';
 import { ProductsSkeleton } from './skeletons';
+// end of import
 
 const Customers = () => {
   document.title = 'My Store - Customers - Shopify';
