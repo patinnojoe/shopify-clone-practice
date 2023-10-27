@@ -21,7 +21,7 @@ const Customers = () => {
       {isLoading ? (
         <ProductsSkeleton />
       ) : (
-        <section className="content-wrapper">
+        <section className="content-wrapper customers">
           <h5 className="fw-bold">Customers</h5>
           <div className="page-white-container shadow-sm">
             <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/93a30c07e111eac4.svg" alt="" />
