@@ -25,7 +25,7 @@ const Orders = () => {
             <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/0ecc04f85cc74cb4.svg" alt="" />
             <div className=" d-flex flex-column gap-2 justify-content-center align-items-center mb-5">
               <p className="fw-bold fnt-13 text-center">Your orders will show here</p>
-              <p className="fnt-13 text-center m-auto w-50">
+              <p className="fnt-13 text-center m-auto sub-text">
                 To get orders and accept payments from customers, you need to select a plan. You’ll only be charged for
                 your plan after your free trial ends.
               </p>
