@@ -1,3 +1,5 @@
 import ProductsSkeleton from './ProductSkeleton';
+import HomeSkeleton from './HomeSkeleton';
+import AnalyticsSkeleton from './AnalyticsSkeleton';
 
-export { ProductsSkeleton };
+export { ProductsSkeleton, HomeSkeleton, AnalyticsSkeleton };

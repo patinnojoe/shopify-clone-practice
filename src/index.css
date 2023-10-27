@@ -279,7 +279,12 @@ li {
 .clr-black {
   color: #000;
 }
-
+.pr-2rem {
+  padding-right: 2rem;
+}
+.mr-2rem {
+  margin-right: 2rem;
+}
 .skeleton {
   opacity: 0.7;
   animation: skeleton-loading 1s linear infinite alternate;
@@ -306,13 +311,19 @@ li {
   border-radius: 0.125rem;
   margin-bottom: 0.5rem;
 }
+.skeleton-header.analytics {
+  width: 97%;
+  display: block;
+  margin: 0.5rem auto;
+}
 .skeleton-buttons {
   width: 20%;
   height: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
-.products-skeleton {
+.products-skeleton,
+.skeleton-wrapper {
   height: 100vh;
   /* width: 100vw; */
 }
@@ -330,12 +341,17 @@ li {
   width: 80%;
   margin-bottom: 0;
 }
+.skeleton-box.analytics {
+  min-height: 300px;
+  width: 100%;
+  border-radius: 6px;
+}
 @keyframes skeleton-loading {
   0% {
-    background-color: hsl(0, 0%, 88%);
+    background-color: hsl(200, 20%, 85%);
   }
 
   100% {
-    background-color: hsla(204, 20%, 95%, 0.904);
+    background-color: hsla(200, 20%, 95%);
   }
 }

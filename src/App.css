@@ -1028,7 +1028,8 @@ input[type='radio'] {
   .normal-tool-tip-btn:hover .normal-tool-tip-content {
     max-width: 250px;
   }
-  .products-skeleton {
+  .products-skeleton,
+  .skeleton-wrapper {
     display: block;
     margin: 0 auto;
     margin-top: 5rem;

@@ -5,10 +5,20 @@ import { FaXmark } from 'react-icons/fa6';
 import PropTypes from 'prop-types';
 
 import { guideItems } from './constants';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { HomeSkeleton } from './skeletons';
 
 const Home = () => {
   document.title = 'My Store - Home - Shopify';
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Toggle state
   const [openedItemIndex, setOpenedItemIndex] = useState(0);
@@ -24,56 +34,60 @@ const Home = () => {
 
   return (
     <Dashboard>
-      <div className="content-wrapper">
-        {/* Trial banner */}
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="notification-tab">
-            <span>Extend your trial for $1/month for 3 months on select plans.</span>
-            <span className="select-plan-container">
-              <button className="trial-btn">Select a plan</button>
-              <FaXmark color="#fff" fontSize="12px" className="cursor-pointer" />
-            </span>
+      {isLoading ? (
+        <HomeSkeleton />
+      ) : (
+        <div className="content-wrapper">
+          {/* Trial banner */}
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="notification-tab">
+              <span>Extend your trial for $1/month for 3 months on select plans.</span>
+              <span className="select-plan-container">
+                <button className="trial-btn">Select a plan</button>
+                <FaXmark color="#fff" fontSize="12px" className="cursor-pointer" />
+              </span>
+            </div>
           </div>
+
+          {/* App setup tutorial */}
+          <section className="app-tutorial-guide">
+            <header className="d-flex flex-column gap-2 p-3">
+              <div className="d-flex justify-content-between">
+                <span className="fw-bold">Setup guide</span>
+                <span className="caret-span">
+                  <FaChevronUp color="#09090961" size={13} className="caret" />
+                </span>
+                <span className="caret-span d-none">
+                  <FaChevronDown color="#09090961" size={13} className="caret " />
+                </span>
+              </div>
+              <p className="fnt-13">Use this personalized guide to get your store up and running.</p>
+              <div className="d-flex align-items-center gap-2">
+                <span>0 of 9 tasks completed</span>
+                <ProgressBar variant="info" now="20%" />
+              </div>
+            </header>
+
+            <div className="app-tutorial-guide-content">
+              <section className="online-store-section">
+                {guideItems.map((item, index) => (
+                  <GuideItem
+                    key={index}
+                    headerText={item.headerText}
+                    subText={item.subText}
+                    actionBtn={item.actionBtn}
+                    itemImage={item.itemImage}
+                    headerTitle={item.headerTitle}
+                    isOpen={index === openedItemIndex}
+                    subOptions={item.subOptions}
+                    onToggle={() => toggleGuide(index)}
+                  />
+                ))}
+              </section>
+            </div>
+          </section>
         </div>
-
-        {/* App setup tutorial */}
-        <section className="app-tutorial-guide">
-          <header className="d-flex flex-column gap-2 p-3">
-            <div className="d-flex justify-content-between">
-              <span className="fw-bold">Setup guide</span>
-              <span className="caret-span">
-                <FaChevronUp color="#09090961" size={13} className="caret" />
-              </span>
-              <span className="caret-span d-none">
-                <FaChevronDown color="#09090961" size={13} className="caret " />
-              </span>
-            </div>
-            <p className="fnt-13">Use this personalized guide to get your store up and running.</p>
-            <div className="d-flex align-items-center gap-2">
-              <span>0 of 9 tasks completed</span>
-              <ProgressBar variant="info" now="20%" />
-            </div>
-          </header>
-
-          <div className="app-tutorial-guide-content">
-            <section className="online-store-section">
-              {guideItems.map((item, index) => (
-                <GuideItem
-                  key={index}
-                  headerText={item.headerText}
-                  subText={item.subText}
-                  actionBtn={item.actionBtn}
-                  itemImage={item.itemImage}
-                  headerTitle={item.headerTitle}
-                  isOpen={index === openedItemIndex}
-                  subOptions={item.subOptions}
-                  onToggle={() => toggleGuide(index)}
-                />
-              ))}
-            </section>
-          </div>
-        </section>
-      </div>
+      )}
     </Dashboard>
   );
 };
