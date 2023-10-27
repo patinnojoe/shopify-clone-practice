@@ -15,7 +15,7 @@ const Dashboard = (props) => {
       <div className={isSidebarOpen ? 'page-wrapper sidebar-open' : 'page-wrapper'}>
         {isSidebarOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
         <AppSidebar />
-        <main className="page-inner">{props.children}</main>
+        <main className="page-inner ">{props.children}</main>
       </div>
     </div>
   );

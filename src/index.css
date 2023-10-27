@@ -23,8 +23,12 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+  overflow: auto;
 }
-
+body:has(.page-inner) {
+  background-color: #f1f1f1 !important;
+  background: #f1f1f1 !important;
+}
 body::-webkit-scrollbar {
   width: 0;
 }
@@ -304,6 +308,10 @@ li {
   border-radius: 10px;
   justify-content: center;
   margin-bottom: 1rem;
+}
+.skeleton-header.home,
+.skeleton-container.home {
+  width: 50%;
 }
 .skeleton-header.app-header {
   width: 100%;

@@ -6,7 +6,7 @@ const guideItems = [
     <a to="#" class="link-text">
       Learn more
     </a>`,
-    actionBtn: ` <div class="d-flex align-items-center gap-2 ">
+    actionBtn: ` <div class="d-flex align-items-center gap-2  justify-content-start">
     <a class="shopify-primary-btn active" to="#">
       Add product
     </a>

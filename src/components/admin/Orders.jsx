@@ -19,7 +19,7 @@ const Orders = () => {
       {isLoading ? (
         <ProductsSkeleton />
       ) : (
-        <section className="content-wrapper">
+        <section className="content-wrapper orders">
           <h5 className="fw-bold">Orders</h5>
           <div className="page-white-container shadow-sm">
             <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/0ecc04f85cc74cb4.svg" alt="" />
