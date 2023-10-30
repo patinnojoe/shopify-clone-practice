@@ -8,7 +8,7 @@ const SignUpMethod = () => {
   return (
     <div className="sign-up-method-container">
       <section className=" sign-up-method  ">
-        <div className="d-flex flex-column  flex-grow-1 ">
+        <div className="d-flex flex-column  flex-grow-1 mt-3 ">
           <div className="flex-grow-1 d-flex flex-column">
             <Link to="/" className="cursor-pointer">
               <svg fill="none" role="img" viewBox="0 0 225 64" height="30">
