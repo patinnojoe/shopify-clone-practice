@@ -51,7 +51,7 @@ const SignUp = () => {
       className="ui-form-container"
     >
       <form className="ui-form">
-        <section className="d-flex flex-column flex-grow-1">
+        <section className="d-flex flex-column flex-grow-1 mt-3">
           {/* form body */}
           <div className="flex-grow-1">
             {/* progress bar */}
